@@ -7,73 +7,53 @@
             "required": true,
             "description": "Unique identifier for the arrow"
         },
-        "start_point": {
+        "location": {
             "type": "object",
             "required": true,
-            "description": "Starting point of the arrow",
-            "properties": {
-                "lat": {
-                    "type": "number",
-                    "required": true
-                },
-                "lon": {
-                    "type": "number",
-                    "required": true
-                },
-                "alt": {
-                    "type": "number",
-                    "required": false
+            "description": "Current location of the arrow",
+            "properties": [
+                {
+                    "lat": {
+                        "type": "number",
+                        "required": true
+                    },
+                    "lon": {
+                        "type": "number",
+                        "required": true
+                    }
                 }
-            }
-        },
-        "end_point": {
-            "type": "object",
-            "required": true,
-            "description": "Ending point of the arrow",
-            "properties": {
-                "lat": {
-                    "type": "number",
-                    "required": true
-                },
-                "lon": {
-                    "type": "number",
-                    "required": true
-                },
-                "alt": {
-                    "type": "number",
-                    "required": false
-                }
-            }
+            ]
         },
         "type": {
             "type": "string",
             "required": true,
             "description": "Type of arrow",
-            "enum": ["movement", "direction", "attack", "retreat", "other"]
-        },
-        "style": {
-            "type": "object",
-            "required": false,
-            "description": "Visual style of the arrow",
-            "properties": {
-                "color": {
-                    "type": "string",
-                    "description": "Color of the arrow"
-                },
-                "width": {
-                    "type": "number",
-                    "description": "Width of the arrow line"
-                },
-                "dashed": {
-                    "type": "boolean",
-                    "description": "Whether the arrow line is dashed"
-                }
-            }
+            "enum": [
+                "movement",
+                "attack",
+                "retreat",
+                "other"
+            ]
         },
         "description": {
             "type": "string",
             "required": false,
             "description": "Additional description of the arrow's purpose"
+        },
+        "executingUnitId": {
+            "type": "string",
+            "required": false,
+            "description": "ID of the unit executing the action"
+        },
+        "createdBy": {
+            "type": "string",
+            "required": false,
+            "description": "ID of the user who created the arrow"
+        },
+        "updatedBy": {
+            "type": "string",
+            "required": false,
+            "description": "ID of the user who last updated the arrow"
         },
         "created_at": {
             "type": "string",
@@ -88,4 +68,4 @@
             "format": "date-time"
         }
     }
-} 
+}
