@@ -14,7 +14,7 @@
             "description": "Type of target (e.g., vehicle, building, person)",
             "enum": ["vehicle", "building", "person", "smoke"]
         },
-        "location": {
+        "position": {
             "type": "object",
             "required": true,
             "description": "Geographic location of the target",
